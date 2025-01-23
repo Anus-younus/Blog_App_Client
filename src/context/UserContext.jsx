@@ -47,7 +47,8 @@ const UserContextProvider = ({ children }) => {
             }
 
             const json = await response.json();
-            console.log(json);
+            localStorage.setItem('TOKEN', json.data.token)
+            console.log(json.data.token);
         } catch (error) {
             console.error(error.message);
         }
